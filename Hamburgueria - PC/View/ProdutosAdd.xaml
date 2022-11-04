@@ -1,0 +1,34 @@
+﻿<Window x:Class="Hamburgueria.View.ProdutosAdd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hamburgueria.View"
+        mc:Ignorable="d"
+        Title="PRODUTO INFO" Height="406.5" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF1B3BC6" Offset="0"/>
+                <GradientStop Color="#FF4472C4" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Label Content="PREENCHA OS CAMPOS ABAIXO" HorizontalAlignment="Left" Height="29" Margin="54,40,0,0" VerticalAlignment="Top" Width="266" Foreground="White" FontSize="16" FontFamily="Arial"/>
+
+        <Label Content="NOME:*" HorizontalAlignment="Left" Margin="45,138,0,0" VerticalAlignment="Top" Width="52" Foreground="White"/>
+        <TextBox x:Name="Description" Margin="102,138,47,0" TextWrapping="Wrap" Style="{DynamicResource TextBoxUnderline}" FontFamily="Arial" Height="24" VerticalAlignment="Top"/>
+
+        <Label Content="CÓDIGO:*" HorizontalAlignment="Left" Margin="45,224,0,0" VerticalAlignment="Top" Width="70" Foreground="White" FontFamily="Arial"/>
+        <TextBox x:Name="Code" MaxLength="5" Margin="111,222,440,0" TextWrapping="Wrap" Style="{DynamicResource TextBoxUnderline}" FontFamily="Arial" Height="24" VerticalAlignment="Top"/>
+       
+        <Label Content="PREÇO:*" HorizontalAlignment="Left" Margin="425,224,0,0" VerticalAlignment="Top" Width="86" Foreground="White" FontFamily="Arial"/>
+        <TextBox x:Name="Price" MaxLength="8" Margin="485,222,47,0" TextWrapping="Wrap" Style="{DynamicResource TextBoxUnderline}" FontFamily="Arial" Height="26" VerticalAlignment="Top"/>
+       
+        <Button x:Name="ClearBtn" Content="LIMPAR" Margin="0,0,159,30" HorizontalAlignment="Right" Width="75" Style="{DynamicResource ButtonShadowAround}" Height="34" VerticalAlignment="Bottom"/>
+
+        <Button x:Name="SaveBtn" Content="SALVAR" Margin="0,0,47,30" HorizontalAlignment="Right" Width="75" Style="{DynamicResource ButtonShadowAround}" Height="34" VerticalAlignment="Bottom"/>
+
+
+    </Grid>
+</Window>

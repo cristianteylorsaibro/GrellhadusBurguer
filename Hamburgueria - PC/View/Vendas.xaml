@@ -1,0 +1,87 @@
+﻿<Window x:Class="Hamburgueria.View.Vendas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hamburgueria.View"
+        mc:Ignorable="d"
+        Title="VENDAS" Height="450" Width="800" WindowState="Maximized" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <SolidColorBrush x:Key="Turquesa" Color="#4472C4"/>
+        <SolidColorBrush x:Key="TurquesaClaro" Color="#8fAADC"/>
+        <SolidColorBrush x:Key="AzulBruxao" Color="#2f5597"/>
+    </Window.Resources>
+    <Grid>
+        <Grid Background="#FF1B3BC6" Height="57" VerticalAlignment="Bottom">
+            <Button x:Name="back" Margin="15,18,0,18" HorizontalAlignment="Left" Width="20" Style="{StaticResource ButtonBack}"/>
+            <ComboBox x:Name="filter" HorizontalAlignment="Right" Margin="0,13,360,10" Width="75" SelectedIndex="0" Height="34" FontSize="11" FontWeight="Bold">
+                <ListBoxItem Content="TODOS" />
+                <ListBoxItem Content="DELIVERY" />
+                <ListBoxItem Content="BALCÃO" />
+            </ComboBox>
+        </Grid>
+
+        <DataGrid x:Name="gridSales" Margin="0,0,0,57" ItemsSource="{Binding}" AlternationCount="2" AlternatingRowBackground="{StaticResource TurquesaClaro}" HorizontalGridLinesBrush="White" VerticalGridLinesBrush="{x:Null}" HorizontalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="False" ColumnHeaderHeight="50" Style="{StaticResource DataGridStyle}" CellStyle="{StaticResource CellStyle}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Type}" Header="TYPE" Visibility="Hidden" HeaderStyle="{StaticResource HeaderStyle}"/>
+                <DataGridTextColumn Binding="{Binding Value}" Header="TIPO" MinWidth="100" HeaderStyle="{StaticResource HeaderStyle}"/>
+                <DataGridTextColumn Binding="{Binding File}" Header="FILE" Visibility="Hidden" HeaderStyle="{StaticResource HeaderStyle}"/>
+                <DataGridTextColumn Binding="{Binding Info}" Header="INFO" Width="*" HeaderStyle="{StaticResource HeaderStyle}"/>
+                <DataGridTextColumn Binding="{Binding Total, StringFormat=C2}" Header="TOTAL" MinWidth="100" HeaderStyle="{StaticResource HeaderStyle}"/>
+                <DataGridTextColumn Binding="{Binding Date}" Header="DATA" MinWidth="150">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="{DynamicResource AzulBruxao}"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="FontFamily" Value="Arial"/>
+                            <Setter Property="FontSize" Value="20"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTemplateColumn MinWidth="40" HeaderStyle="{StaticResource HeaderStyle}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Remove}" Height="25" Width="40" VerticalAlignment="Top"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn MinWidth="40" HeaderStyle="{StaticResource HeaderStyle}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Modify}" Height="25" Width="40" VerticalAlignment="Top"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn MinWidth="40" HeaderStyle="{StaticResource HeaderStyle}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Print}" Height="25" Width="40" VerticalAlignment="Top"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn MinWidth="40" HeaderStyle="{StaticResource HeaderStyle}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Confirm}" Height="25" Width="40" VerticalAlignment="Top"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="menuDelivery" Header="DELIVERY"/>
+                    <MenuItem x:Name="menuLocal" Header="BALCÃO"/>
+                    <MenuItem x:Name="menuFast" Header="RÁPIDA"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+        </DataGrid>
+
+        <Button x:Name="addDelivery" HorizontalAlignment="Right" Content="DELIVERY" Width="75" Height="34" VerticalAlignment="Bottom" Margin="0,0,25,8" Style="{DynamicResource ButtonShadowAround}"/>
+
+        <Button x:Name="addLocal" HorizontalAlignment="Right" Content="BALCÃO" Width="75" Height="34" VerticalAlignment="Bottom" Margin="0,0,123,8" Style="{DynamicResource ButtonShadowAround}"/>
+
+        <Button x:Name="addFast" HorizontalAlignment="Right" Content="RÁPIDA" Width="75" Height="34" VerticalAlignment="Bottom" Margin="0,0,218,9" Style="{DynamicResource ButtonShadowAround}"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,87 @@
+﻿<Window x:Class="Hamburgueria.View.Relatorios"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hamburgueria.View"
+        mc:Ignorable="d"
+        Title="RELATÓRIOS" Height="768" Width="1366" WindowState="Maximized" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="#FF1B3BC6"/>
+                <GradientStop Color="#FF4472C4" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <DataGrid x:Name="grid" 
+                  Margin="0,212,0,0" 
+                  AutoGenerateColumns="True"
+                  AlternationCount="2"
+                  CanUserResizeColumns="False"
+                  CanUserResizeRows="False"
+                  RowBackground="{StaticResource Turquesa}" 
+                  AlternatingRowBackground="{DynamicResource TurquesaClaro}" 
+                  CanUserDeleteRows="False" 
+                  CanUserAddRows="False" 
+                  FontSize="22px"
+                  VerticalGridLinesBrush="White"
+                  HorizontalGridLinesBrush="White"
+                  IsReadOnly="True"
+                  Foreground="White"
+                  SelectionMode="Single" 
+                  ColumnHeaderStyle="{StaticResource HeaderStyle}"
+                  HorizontalScrollBarVisibility="Disabled"/>
+
+        <Rectangle Height="40" VerticalAlignment="Bottom">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4472C4" Offset="0"/>
+                    <GradientStop Color="#FF1B3BC6" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <ComboBox x:Name="styleBox" Margin="30,75,0,0" HorizontalAlignment="Left" Width="250" Height="25" VerticalAlignment="Top">
+            <ListBoxItem Content="VENDAS"/>
+            <ListBoxItem Content="PRODUTOS"/>
+            <ListBoxItem Content="CLIENTES"/>
+        </ComboBox>
+
+        <ComboBox x:Name="periodBox" Margin="388,75,0,0" HorizontalAlignment="Left" Width="250" Height="25" VerticalAlignment="Top">
+            <ListBoxItem Content="DIÁRIO"/>
+            <ListBoxItem Content="SEMANAL"/>
+            <ListBoxItem Content="MENSAL"/>
+            <ListBoxItem Content="ANUAL"/>
+            <ListBoxItem Content="CUSTOMIZADO"/>
+        </ComboBox>
+
+        <ComboBox x:Name="typeBox" Margin="746,75,0,0" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Width="250">
+            <ListBoxItem Content="TODOS"/>
+            <ListBoxItem Content="DELIVERY"/>
+            <ListBoxItem Content="BALCÃO"/>
+        </ComboBox>
+
+        <DatePicker x:Name="dateOne" Margin="28,150,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="256" Height="30" BorderBrush="{x:Null}" Foreground="#FF1D3DC6" FontFamily="Arial" FontSize="15"/>
+        <DatePicker x:Name="dateTwo" Margin="388,150,0,0" VerticalAlignment="Top" Height="25" Foreground="#FF1D3DC6" BorderBrush="{x:Null}" HorizontalAlignment="Left" Width="250"  FontFamily="Arial" FontSize="15"/>
+
+        <Button x:Name="Filter" Content="FILTRAR" Margin="886,144,0,0" VerticalAlignment="Top" Style="{DynamicResource ButtonShadowAround}" Height="36" HorizontalAlignment="Left" Width="110"/>
+
+        <Button x:Name="Back" Margin="15,15,0,0" VerticalAlignment="Top" Height="20" HorizontalAlignment="Left" Width="20" Style="{StaticResource ButtonBack}"/>
+
+        <Label x:Name="labelBruteTotal" Content="BRUTO TOTAL: R$0,00" Margin="100,0,1042,6" FontFamily="Arial" FontSize="15" Foreground="White" Height="27" VerticalAlignment="Bottom"/>
+        <Label x:Name="labelDiscount" Content="DESCONTO TOTAL: R$0,00" Margin="573,0,545,6" FontFamily="Arial" FontSize="15" Foreground="White" Height="27" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="240"/>
+        <Label x:Name="labelTotal" Content="TOTAL: R$0,00" Margin="0,0,92,6" FontFamily="Arial" FontSize="15" Foreground="White" Height="27" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="160"/>
+
+        <Border x:Name="btnExcel" Margin="0,95,80,0" HorizontalAlignment="Right" Width="110" CornerRadius="20" Background="White" Height="37" VerticalAlignment="Top">
+            <Border.Effect>
+                <DropShadowEffect Color="Black" ShadowDepth="0" BlurRadius="20" Opacity=".7"/>
+            </Border.Effect>
+            <Grid x:Name="toExcel">
+                <Label Content="EXPORTAR" Foreground="#FF1D3DC6" FontFamily="Arial" FontSize="11" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="5,0,0,0" HorizontalAlignment="Left" Width="100"/>
+                <Image Margin="0,0,0,0" Source="/Hamburgueria;component/Resources/excel_icon.png" HorizontalAlignment="Right" Width="110" />
+            </Grid>
+        </Border>
+
+    </Grid>
+</Window>
