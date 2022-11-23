@@ -20,10 +20,10 @@ namespace Hamburgueria
 
         public static void Sale(DateTime dateSale, decimal totalBrute, decimal discount, decimal totalValue, decimal valuePay, decimal change, string payment, ObservableCollection<Item> products)
         {
-            string content = "        BIG BURGUER";
-            content += "\nRUA TOCANTINS, Nº95, MORRO";
+            string content = "        Grelhadu´s Burguer";
+            content += "\nAvenida Expedicionario, Nº95, Centro";
             content += "\nDAS BICAS";
-            content += "\nTELEFONE: 3543-0336";
+            content += "\nTELEFONE: 3361-0336";
             content += "\nWhatsapp: 99303-2638";
             content += "\n---------------------------";
             content += "\n      CUPOM NÃO FISCAL";
@@ -70,10 +70,10 @@ namespace Hamburgueria
 
         public static void Sale(Tables.Client clientItem, DateTime dateSale, decimal totalBrute, decimal discount, decimal totalValue, string payment, decimal valuePay, decimal change, ObservableCollection<Item> products)
         {
-            string content = "        BIG BURGUER";
-            content += "\nRUA TOCANTINS, Nº95, MORRO";
+            string content = "        Grelhadu´s Burguer";
+            content += "\nAvenida Expedicionario, Nº95, Centro";
             content += "\nDAS BICAS";
-            content += "\nTELEFONE: 3543-0336";
+            content += "\nTELEFONE: 3361-0336";
             content += "\nWhatsapp: 99303-2638";
             content += "\n---------------------------";
             content += "\n      CUPOM NÃO FISCAL";
