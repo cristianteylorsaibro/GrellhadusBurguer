@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Hamburgueria___PC"
         mc:Ignorable="d"
         Title="HAMBURGUERIA" Height="766.9" Width="1366" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="Resources/logo.ico">
-    <Grid Background="Orange">
+    <Grid Background="Black">
         <Grid.RowDefinitions>
             <RowDefinition Height="297*"/>
             <RowDefinition Height="220*"/>
@@ -17,7 +17,7 @@
             <ColumnDefinition Width="455*"/>
             <ColumnDefinition Width="455*"/>
         </Grid.ColumnDefinitions>
-        
+
         <Button x:Name="BtnVendas" Content="" Margin="80,19,80,53" Style="{StaticResource MyButtonStyle}" Grid.Row="1">
             <Button.Background>
                 <ImageBrush ImageSource="Resources/Botao_vendas.png" Stretch="Uniform"/>
@@ -38,7 +38,7 @@
                 <ImageBrush ImageSource="Resources/Botao_Produtos.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <Border BorderThickness="1" Margin="12,100,11,148" Style="{StaticResource LogoShadow}" Grid.Column="1" Grid.RowSpan="3" Opacity="0.75">
+        <Border BorderThickness="1" Margin="79,-11,-22,10" Style="{StaticResource LogoShadow}" Grid.Column="2" Opacity="0.75">
             <Border.Background>
                 <ImageBrush ImageSource="Resources/logo final.png" Stretch="Uniform"/>
             </Border.Background>
